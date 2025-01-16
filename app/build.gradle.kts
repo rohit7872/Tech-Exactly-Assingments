@@ -64,4 +64,7 @@ dependencies {
     implementation("com.google.code.gson:gson:2.9.0")
     implementation ("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.11")
     implementation ("com.github.bumptech.glide:glide:4.11.0")
+
+    implementation ("androidx.paging:paging-runtime:3.1.1")
+
 }

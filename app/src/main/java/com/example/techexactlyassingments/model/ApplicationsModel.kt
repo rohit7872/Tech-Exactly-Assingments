@@ -12,5 +12,6 @@ data class ApplicationsModel(
     @SerializedName("app_name") val app_name: String,
     @SerializedName("app_icon") val app_icon: String,
     @SerializedName("app_package_name") val app_package_name: String,
-    @SerializedName("status") var status: String
+    @SerializedName("status") var status: String,
+    var isSwitchOn: Boolean
 ) : Parcelable

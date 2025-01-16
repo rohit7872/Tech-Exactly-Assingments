@@ -43,18 +43,19 @@ class ApplicationsFragAdapter(
                 .load(application.app_icon)
                 .placeholder(R.drawable.man)
                 .into(appIcon)
+            switchButton.setOnCheckedChangeListener(null)
             switchButton.isChecked = application.status.equals("Active", ignoreCase = true)
+
+
             switchButton.setOnCheckedChangeListener { _, isChecked ->
-                val newStatus = if (isChecked) "Active" else "Inactive"
-                appStatus.text = newStatus
+                application.isSwitchOn = isChecked
+                application.status = if (isChecked) "Active" else "Inactive"
+                appStatus.text = application.status
 
             }
-
-
         }
     }
-
-    fun updateList(newList: List<ApplicationsModel>) {
+                fun updateList(newList: List<ApplicationsModel>) {
         appList = newList
         filteredList = newList
         notifyDataSetChanged()
